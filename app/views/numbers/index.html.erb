@@ -17,23 +17,23 @@
 <br>
 
 <div class="d-flex justify-content-center">
-<table class="table table-hover table-responsive">
-  <thead class="thead-primary text-center">
-    <tr>
-      <th> Number </th>
-      <th> Number in words </th>
-    </tr>
-    <br>
-  </thead>
-  <tbody>
-    <% @numbers.each do |i| %>
+  <table class="table table-hover table-responsive">
+    <thead class="thead-primary text-center">
       <tr>
-        <td><%= i.name %></td>
-        <td><%= i.name_in_word.capitalize %></td>
+        <th> Number </th>
+        <th> Number in words </th>
       </tr>
-    <% end %>
-  </tbody>
-</table> 
+      <br>
+    </thead>
+    <tbody>
+      <% @numbers.each do |i| %>
+        <tr>
+          <td><%= i.name %></td>
+          <td><%= i.name_in_word.capitalize %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table> 
 </div>
 <br>
 <%= will_paginate @collection, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
