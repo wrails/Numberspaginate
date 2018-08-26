@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-1.upto(1000000) do |i|
+1.upto(100) do |i|
 	Number.create(:name => i, :name_in_word => i.humanize )
 end
