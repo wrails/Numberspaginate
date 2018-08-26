@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center number">1 Million Numbers</h1>
+
+<div class="set_per_page ">
+  <%= form_tag numbers_path, method: :get do %>    
+        Set number of records per page to: 
+        <%= number_field_tag :per_page, params[:per_page], min: 1, :required => false, class: "per_page", placeholder: "Default to 1000 records/page" %>     
+        <button class="btn btn-outline-success space"  type="submit">Go!</button>
+        <br>
+  <% end %>  
+</div>
+
+<br>
+
+<%= will_paginate @collection, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+<br>
+
+<div class="d-flex justify-content-center">
+<table class="table table-hover table-responsive">
+  <thead class="thead-primary text-center">
+    <tr>
+      <th> Number </th>
+      <th> Number in words </th>
+    </tr>
+    <br>
+  </thead>
+  <tbody>
+    <% @numbers.each do |i| %>
+      <tr>
+        <td><%= i.name %></td>
+        <td><%= i.name_in_word.capitalize %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+</div>
+<br>
+<%= will_paginate @collection, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+<br>
+<br>
+<br>
