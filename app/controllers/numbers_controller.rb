@@ -19,10 +19,8 @@ def create
   respond_to do |format|
     if @number.save
       format.html { redirect_to @number, notice: 'Number was successfully created.' }
-      format.json { render :show, status: :created, location: @number }
     else
       format.html { render :new }
-      format.json { render json: @number.errors, status: :unprocessable_entity }
     end
   end
 end

@@ -35,6 +35,13 @@ input, button, select, optgroup, textarea {
     input#per_page {
         width: 28% !important;
     }
+    .table {
+    border-radius: 1px;
+    width: 30%;
+    margin: 0px auto;
+    float: none;
+    margin-left: 43% !important;
+}
 }
 @media (min-width: 640px) and (orientation : landscape) {  
 	.set_per_page {
